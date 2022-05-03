@@ -104,10 +104,10 @@ sudo apt install curl git docker.io -y
 ```
 
 Clone github repo  
-`git clone https://github.com/c29r3/cosmos-snapshots.git && cd cosmos-snapshots`  
+`git clone https://github.com/Errorist79/cosmos-snapshots.git`  
 
 Create folder for snapshots  
-`mkdir $HOME/akash`
+`mkdir $HOME/kyve_snap`
 
 Start Nginx via docker  
 ```bash
@@ -115,21 +115,21 @@ cd $HOME; \
 docker run --name nginx \
 --restart always \
 -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf \
--v $(pwd)/akash/:/root/ \
+-v $(pwd)/kyve_snap/:/root/ \
 -p 80:80 \
 -d nginx
 ```
 
 Fill in the variables in the file `akash_snapshot.sh`  
 ```
-CHAIN_ID="akashnet-2"
-SNAP_PATH="$HOME/akash/akash"
-LOG_PATH="$HOME/akash/akash_log.txt"
-DATA_PATH="$HOME/.akash/data/"
-SERVICE_NAME="akash.service"
+CHAIN_ID="korellia"
+SNAP_PATH="$HOME/kyve_snap"
+LOG_PATH="$HOME/akash/kyve_log.txt"
+DATA_PATH="$HOME/.kyve/data/"
+SERVICE_NAME="kyved.service"
 ```
 Create new snapshot  
-`./akash_snapshot.sh`  
+`./kyve_snapshot.sh`  
 
 Check snapshot  
 ```bash
