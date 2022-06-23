@@ -1,10 +1,10 @@
 #!/bin/bash
-CHAIN_ID="quicktest-3"
-SNAP_PATH="$HOME/snapshot"
-LOG_PATH="$HOME/snapshot/log.txt"
+CHAIN_ID="killerqueen-1"
+SNAP_PATH="$HOME/snapshot/tesnet/quicksilver"
+LOG_PATH="$HOME/snapshot/tesnet/quicksilver/log.txt"
 DATA_PATH="$HOME/.quicksilverd/data/"
 SERVICE_NAME="quicksilverd.service"
-RPC_ADDRESS="http://localhost:36657"
+RPC_ADDRESS="http://localhost:17657"
 SNAP_NAME=$(echo "${CHAIN_ID}_$(date '+%Y-%m-%d').tar")
 OLD_SNAP=$(ls ${SNAP_PATH} | egrep -o "${CHAIN_ID}.*tar")
 
